@@ -31,16 +31,22 @@ class Board:
         if piece is None:
             print(f"No piece at position {start}")
             return False
+            # Only work with the white pawn.
         elif piece.name == "Pawn" and piece.color == "white":
             start_row, start_col = start
             end_row, end_col = end
+            # Only one move forward.
             if end_row == start_row -1 and end_col == start_col: 
                 if self.board[end_row][end_col] is None:
                     return True
                 else: 
                     return False
+            # Two moves forward.
             elif start_row == 6 and start_col == end_col:
-                return True
+                if self.board[start_row -1][start_col] is None and self.board[start_row -2][start_col] is None:
+                    return True
+                else:
+                    return False
             else:
                 return False
 
