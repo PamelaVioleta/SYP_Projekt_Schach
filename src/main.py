@@ -8,9 +8,9 @@ def main():
     pygame.init()
     ROWS, COLS, SQUARE_SIZE = 8, 8, 60
     screen = pygame.display.set_mode((COLS * SQUARE_SIZE, ROWS * SQUARE_SIZE))
-    pygame.display.set_caption("Ejemplo de Tablero de Ajedrez")
+    pygame.display.set_caption("SpACH")
 
-    board = Board()  # Crear instancia del tablero
+    board = Board(ROWS, COLS, SQUARE_SIZE)  # Crear instancia del tablero
 
     running = True
     while running:
